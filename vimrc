@@ -182,3 +182,12 @@ set foldenable
 set cursorline
 set autowrite
 set magic  
+
+" Make cursor always on center of screen by default
+if !exists('noalwayscenter')
+    " Calculate proper scrolloff
+    autocmd VimEnter,WinEnter,VimResized,InsertLeave * :let &scrolloff = float2nr(floor(winheight(0)/2)+1)
+    autocmd InsertEnter * :let &scrolloff = float2nr(floor(winheight(0)/2))
+    " Use <Enter> to keep center in insert mode, need proper scrolloff
+    inoremap <CR> <CR><C-o>zz
+endif
