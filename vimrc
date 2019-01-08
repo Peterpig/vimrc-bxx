@@ -1,5 +1,4 @@
-
-set nocompatible                                                                                                                                                                             
+set nocompatible
 set number
 set softtabstop=4
 filetype on
@@ -12,7 +11,7 @@ set vb t_vb=
 set ruler
 "set nohls
 "set hlsearch
-set hls 
+set hls
 "代码下划线关闭
 set nocursorline
 
@@ -33,7 +32,7 @@ set autoindent
 set smartindent
 
 let Grep_Skip_Dirs = '.git CVS SCCS .svn generated'
-set grepprg=/bin/grep\ -nH 
+set grepprg=/bin/grep\ -nH
 
 map ,ss :setlocal spell!<cr>
 
@@ -173,15 +172,15 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i 
+inoremap { {}<ESC>i<CR><ESC>V<V<O<BS>
+inoremap < <><ESC>i
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 
 set foldenable
 set cursorline
 set autowrite
-set magic  
+set magic
 
 " Make cursor always on center of screen by default
 if !exists('noalwayscenter')
